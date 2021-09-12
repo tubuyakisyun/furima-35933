@@ -4,7 +4,7 @@
 // that code so it'll be compiled.
 
 require("@rails/ujs").start()
-require("turbolinks").start()
+// require("turbolinks").start()  ⇦この行を削除する　これで、turbolinksが無効化できました
 require("@rails/activestorage").start()
 require("channels")
 
