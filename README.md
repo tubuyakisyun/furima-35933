@@ -19,39 +19,6 @@
 
 - has_many :items
 - has_many :purchases
-- has_many :user_delivery_addresses
-- has_many :delivery_addresses, through: :user_delivery_addresses
-
-## user_delivery_addresses テーブル
-
-| Column               | Type       | Options                        |
-| -------------------- | ---------- | ------------------------------ |
-| user                 | references | null: false, foreign_key: true |
-| delivery_address     | references | null: false, foreign_key: true |
-
-### Association
-
-- belongs_to :user
-- belongs_to :delivery_address
-
-## delivery_addresses テーブル
-
-| Column                 | Type       | Options                        |
-| ---------------------- | ---------- | ------------------------------ |
-| postal_code_id         | integer    | null: false                    |
-| prefecture_id          | integer    | null: false                    |
-| city                   | string     | null: false                    |
-| building_name          | string     | null: false                    |
-| address                | string     | null: false                    |
-| phone_number           | integer    | null: false                    |
-| item                   | references | null: false, foreign_key: true |
-
-
-### Association
-
-- belongs_to :item
-- has_many :user_delivery_addresses
-- has_many :users, through: :user_delivery_addresses
 
 ## items テーブル
 
@@ -70,7 +37,6 @@
 ### Association
 
 - belongs_to :user
-- has_many :delivery_addresses
 - has_one :purchase
 
 ## purchases テーブル
@@ -84,3 +50,20 @@
 
 - belongs_to :item
 - belongs_to :user
+- has_many :delivery_addresses
+
+## delivery_addresses テーブル
+
+| Column                 | Type       | Options                        |
+| ---------------------- | ---------- | ------------------------------ |
+| postal_code_id         | integer    | null: false                    |
+| prefecture_id          | integer    | null: false                    |
+| city                   | string     | null: false                    |
+| building_name          | string     | null: false                    |
+| address                | string     | null: false                    |
+| phone_number           | integer    | null: false                    |
+| item                   | references | null: false, foreign_key: true |
+
+### Association
+
+- belongs_to :purchase
