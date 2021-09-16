@@ -7,7 +7,7 @@
 | ---------------------- | ---------- | ------------------------------   |
 | id                     | integer    | null:   false                    |
 | nickname               | string     | null:   false                    |
-| email                  | string     | unique:  true                    |
+| email                  | string     | null:   false, unique: true      |
 | encrypted_password     | string     | null:   false                    |
 | birth_date             | date       | null:   false                    |
 | last_name              | string     | null:   false                    |
