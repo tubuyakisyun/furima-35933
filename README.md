@@ -77,7 +77,6 @@
 
 | Column             | Type       | Options                        |
 | ------------------ | -----------| ------------------------------ |
-| buyer              | string     | null: false                    |
 | user               | references | null: false, foreign_key: true |
 | item               | references | null: false, foreign_key: true |
 
