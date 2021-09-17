@@ -10,6 +10,9 @@
                 <mxCell id="220" value="id(integer型,not null)" style="whiteSpace=wrap;html=1;rounded=0;shadow=0;align=center;fontStyle=1" vertex="1" parent="88">
                     <mxGeometry y="30" width="250" height="30" as="geometry"/>
                 </mxCell>
+                <mxCell id="282" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.798;entryY=-0.006;entryDx=0;entryDy=0;entryPerimeter=0;endArrow=ERmany;endFill=0;" edge="1" parent="1" source="97" target="229">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
                 <mxCell id="281" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.795;entryY=-0.054;entryDx=0;entryDy=0;entryPerimeter=0;endArrow=ERmany;endFill=0;" edge="1" parent="1" source="97" target="229">
                     <mxGeometry relative="1" as="geometry"/>
                 </mxCell>
@@ -78,13 +81,6 @@
                 <mxCell id="254" value="user_id(integer型,not null)" style="whiteSpace=wrap;html=1;rounded=0;shadow=0;align=center;fontStyle=1" vertex="1" parent="1">
                     <mxGeometry x="130" y="655" width="160" height="30" as="geometry"/>
                 </mxCell>
-                <mxCell id="278" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.25;entryDx=0;entryDy=0;endArrow=ERmany;endFill=0;exitX=1;exitY=0.25;exitDx=0;exitDy=0;" edge="1" parent="1" source="260" target="183">
-                    <mxGeometry relative="1" as="geometry">
-                        <Array as="points">
-                            <mxPoint x="480" y="693"/>
-                        </Array>
-                    </mxGeometry>
-                </mxCell>
                 <mxCell id="231" value="name(&lt;span style=&quot;font-weight: 400&quot;&gt;string型,not null)&lt;/span&gt;" style="whiteSpace=wrap;html=1;rounded=0;shadow=0;align=center;fontStyle=1" vertex="1" parent="1">
                     <mxGeometry x="130" y="715" width="160" height="30" as="geometry"/>
                 </mxCell>
@@ -134,6 +130,9 @@
                 </mxCell>
                 <mxCell id="221" value="user_id(integer型,not null)" style="whiteSpace=wrap;html=1;rounded=0;shadow=0;align=center;fontStyle=1" vertex="1" parent="1">
                     <mxGeometry x="520" y="140" width="230" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="283" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;endArrow=ERmandOne;endFill=0;" edge="1" parent="1" source="260" target="183">
+                    <mxGeometry relative="1" as="geometry"/>
                 </mxCell>
                 <mxCell id="260" value="item_id(integer型,not null)" style="whiteSpace=wrap;html=1;rounded=0;shadow=0;align=center;fontStyle=1" vertex="1" parent="1">
                     <mxGeometry x="130" y="685" width="160" height="30" as="geometry"/>

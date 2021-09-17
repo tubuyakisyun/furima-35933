@@ -49,7 +49,7 @@
 
 - belongs_to :item
 - belongs_to :user
-- has_many :delivery_addresses
+- has_one :delivery_address
 
 ## delivery_addresses テーブル
 
