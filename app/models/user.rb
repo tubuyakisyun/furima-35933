@@ -7,7 +7,8 @@ class User < ApplicationRecord
   with_options presence: true do
       validates :nickname
       validates :birth_date
-    with_options format: {with: /\A[a-zA-Z0-9]+\z/, message: "is invalid. Input half-width alphanumeric"} do
+    with_options format: {with: /(?=.*[a-zA-Z])(?=.*\d)[a-zA-Z\d]{6,}/, message: "is invalid. Input half-width alphanumeric."} do
+      validates :encrypted_password
       validates :password
       validates :password_confirmation
     end
