@@ -9,7 +9,7 @@ class User < ApplicationRecord
     with_options format: {with: /(?=.*[a-zA-Z])(?=.*\d)[a-zA-Z\d]{6,}/, message: "is invalid. Input half-width alphanumeric."} do
       validates :password
     end
-    with_options format: {with: /\A[ぁ-んァ-ン一-龥]/, message: "is invalid. Input full-width characters."} do
+    with_options format: {with: /\A[ぁ-んァ-ヶ一-龥々ー]+\z/, message: "is invalid. Input full-width characters."} do
       validates :last_name
       validates :first_name
     end
