@@ -6,9 +6,6 @@ class User < ApplicationRecord
   with_options presence: true do
       validates :nickname
       validates :birth_date
-    with_options format: { with:/\A[\w+\-.]+@[a-z\d\-]+(\.[a-z\d\-]+)*\.[a-z]+\z/i }, length: { maximum: 255 }, uniqueness: true  do
-      validates :email 
-    end
     with_options format: {with: /(?=.*[a-zA-Z])(?=.*\d)[a-zA-Z\d]{6,}/, message: "is invalid. Input half-width alphanumeric."} do
       validates :encrypted_password
       validates :password
