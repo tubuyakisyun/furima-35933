@@ -107,13 +107,13 @@ RSpec.describe User, type: :model do
         @user.password = 'qqqqqqq'
         @user.password_confirmation = 'qqqqqqq'
         @user.valid?
-        expect(@user.errors.full_messages).to include("Password is invalid. Input half-width alphanumeric")
+        expect(@user.errors.full_messages).to include("Password is invalid. Input half-width alphanumeric.")
       end
       it 'passwordが、半角英数字混合での入力でなければ登録できない' do
         @user.password = '444444'
         @user.password_confirmation = '444444'
         @user.valid?
-        expect(@user.errors.full_messages).to include("Password is invalid. Input half-width alphanumeric")
+        expect(@user.errors.full_messages).to include("Password is invalid. Input half-width alphanumeric.")
       end
       it 'お名前(first_name)（全角）は全角（漢字・ひらがな・カタカナ）での入力しないと登録できない' do
         @user.first_name = 'nana'
