@@ -1,0 +1,15 @@
+class category < ActiveHash::Base
+  self.date = [
+    { id: 1, date: '--' },
+    { id: 2, date: 'レディース' },
+    { id: 3, date: 'メンズ' },
+    { id: 4, date: 'ベビー・キッズ' },
+    { id: 5, date: 'インテリア・住まい・小物' },
+    { id: 6, date: '本・音楽・ゲーム' },
+    { id: 7, date: 'おもちゃ・ホビー・グッズ' },
+    { id: 8, date: '家電・スマホ・カメラ' },
+    { id: 9, date: 'スポーツ・レジャー' },
+    { id: 10, date: 'ハンドメイド' },
+    { id: 11, date: 'その他' }
+  ]
+end
