@@ -8,4 +8,6 @@ class sales_status < ActiveHash::Base
     { id: 6, date: '傷や汚れあり' },
     { id: 7, date: '全体的に状態が悪い' }
   ]
+  include ActiveHash::Associations
+  has_many :items
 end
