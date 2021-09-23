@@ -1,6 +1,6 @@
 class sales_status < ActiveHash::Base
   self.date = [
-    { id: 1, date: '--' },
+    { id: 1, date: '---' },
     { id: 2, date: '新品' },
     { id: 3, date: '未使用に近い' },
     { id: 4, date: '目たった傷や汚れなし' },
