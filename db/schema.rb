@@ -38,10 +38,10 @@ ActiveRecord::Schema.define(version: 2021_09_23_151929) do
     t.text "info", null: false
     t.integer "price", null: false
     t.integer "category_id", null: false
-    t.integer "salesstatus_id", null: false
-    t.integer "shippingfeestatus_id", null: false
+    t.integer "sales_id", null: false
+    t.integer "shipping_id", null: false
     t.integer "prefecture_id", null: false
-    t.integer "scheduleddelivery_id", null: false
+    t.integer "scheduled_id", null: false
     t.bigint "user_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
