@@ -82,7 +82,7 @@ RSpec.describe Item, type: :model do
         expect(@item.errors.full_messages).to include { 'Price Out of setting range' }
       end
       it '価格は半角数値ではないと保存できないこと' do
-        @item.price = '９９９９９'
+        @item.price = '７０００'
         @item.valid?
         expect(@item.errors.full_messages).to include { 'Price Half-width number' }
       end
@@ -115,6 +115,11 @@ RSpec.describe Item, type: :model do
         @item.scheduled_id = '1'
         @item.valid?
         expect(@item.errors.full_messages).to include { "Scheduled can't be blank" }
+      end
+      it '出品者いないと出品できない' do
+        @item.user = nil 
+        @item.valid?
+        expect(@item.errors.full_messages).to include {"User must exist"}
       end
     end
   end
