@@ -87,7 +87,7 @@ RSpec.describe Item, type: :model do
         expect(@item.errors.full_messages).to include { 'Price Half-width number' }
       end
       it '写真が付かないと出品できない' do
-        @item.image.key = ''
+        @item.image = nil 
         @item.valid?
         expect(@item.errors.full_messages).to include { "Image can't be blank" }
       end
