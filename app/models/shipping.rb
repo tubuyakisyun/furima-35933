@@ -1,0 +1,9 @@
+class Shipping < ActiveHash::Base
+  self.data = [
+    { id: 1, shipping_id: '---' },
+    { id: 2, shipping_id: '着払い（購入者負担）' },
+    { id: 3, shipping_id: '送料込み（出品者負担）' }
+  ]
+  include ActiveHash::Associations
+  has_many :items
+end
