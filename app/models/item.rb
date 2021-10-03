@@ -3,13 +3,15 @@ class Item < ApplicationRecord
   has_one_attached :image
 
   with_options presence: true do
-    validates :name 
+    validates :name
     validates :image
-    validates :info 
+    validates :info
     validates :price
   end
-  validates :price,numericality: { with: /\A[0-9]+\z/, message: 'Half-width number' , allow_blank: true}
-  validates :price,numericality: { greater_than_or_equal_to: 300, less_than_or_equal_to: 9_999_999, message: 'Out of setting range' , allow_blank: true}
+  validates :price, numericality: { with: /\A[0-9]+\z/, message: 'Half-width number', allow_blank: true }
+  validates :price,
+            numericality: { greater_than_or_equal_to: 300, less_than_or_equal_to: 9_999_999, message: 'Out of setting range',
+                            allow_blank: true }
 
   extend ActiveHash::Associations::ActiveRecordExtensions
   belongs_to :category

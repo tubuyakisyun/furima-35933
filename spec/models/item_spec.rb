@@ -87,7 +87,7 @@ RSpec.describe Item, type: :model do
         expect(@item.errors.full_messages).to include { 'Price Half-width number' }
       end
       it '写真が付かないと出品できない' do
-        @item.image = nil 
+        @item.image = nil
         @item.valid?
         expect(@item.errors.full_messages).to include { "Image can't be blank" }
       end
@@ -117,9 +117,9 @@ RSpec.describe Item, type: :model do
         expect(@item.errors.full_messages).to include { "Scheduled can't be blank" }
       end
       it '出品者いないと出品できない' do
-        @item.user = nil 
+        @item.user = nil
         @item.valid?
-        expect(@item.errors.full_messages).to include {"User must exist"}
+        expect(@item.errors.full_messages).to include { 'User must exist' }
       end
     end
   end
