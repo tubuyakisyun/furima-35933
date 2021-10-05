@@ -35,11 +35,7 @@ class ItemsController < ApplicationController
   end
 
   def destroy
-    if current_user == @item.user
-      if @item.destroy 
-       redirect_to root_path
-      end
-    end
+    redirect_to root_path if current_user == @item.user && @item.destroy
   end
 
   private
@@ -48,6 +44,7 @@ class ItemsController < ApplicationController
     params.require(:item).permit(:image, :name, :info, :price, :category_id, :prefecture_id, :status_id, :scheduled_id,
                                  :shipping_id).merge(user_id: current_user.id)
   end
+
   def set_item
     @item = Item.find(params[:id])
   end
