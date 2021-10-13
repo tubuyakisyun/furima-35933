@@ -5,13 +5,21 @@ class PurchasesController < ApplicationController
   end
 
   def new
+    @purchase_address = PurchaseAddress.new
   end
   
   def create
-    item = Item.find(params[:item_id])
-    @purchase = item.create_purchase!(user_id: current_user.id)
-    @purchase.create_address!(address_params)
-    redirect_to root_path
+    @purchase_address = PurchaseAddress.new(purchase_params)
+    if @purchase_address.valid?
+      @purchase_address.save
+      redirect_to root_path
+    else
+      render new
+    end
+  #   item = Item.find(params[:item_id])
+  #   @purchase = item.create_purchase!(user_id: current_user.id)
+  #   @purchase.create_address!(address_params)
+  #   redirect_to root_path
   end
 
   private
@@ -20,8 +28,10 @@ class PurchasesController < ApplicationController
   #   params.merge(user_id: current_user.id, item_id: params[:item_id])
   # end 
 
-  def address_params
-    params.permit(:postal_code, :prefecture_id, :city, :house_number, :phone_number, :building_name).merge(purchase_id: @purchase.id)  
+  # def address_params
+    # params.permit(:postal_code, :prefecture_id, :city, :house_number, :phone_number, :building_name).merge(purchase_id: @purchase.id)  
+  # end
+  def purchase_params
+    params.require(:purchase_address).permit(:postal_code, :prefecture_id, :city, :house_number, :phone_number, :building_name).merge(user_id: current_user.id, purchase_id: @purchase.id)
   end
-  
 end
