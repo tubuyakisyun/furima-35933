@@ -52,17 +52,17 @@ RSpec.describe PurchaseAddress, type: :model do
       it 'phone_numberは半角数値のみではないと保存できないこと' do
         @purchase_address.phone_number = '０９０７８９７６６６６'
         @purchase_address.valid?
-        expect(@purchase_address.errors.full_messages).to include("Phone number number is invalid. Include half-width numbers")
+        expect(@purchase_address.errors.full_messages).to include('Phone number number is invalid. Include half-width numbers')
       end
       it 'phone_numberが9桁以下の場合は購入できないこと' do
         @purchase_address.phone_number = '08012345'
         @purchase_address.valid?
-        expect(@purchase_address.errors.full_messages).to include("Phone number Please enter the minimum number of digits in the phone number at 9th place")
+        expect(@purchase_address.errors.full_messages).to include('Phone number Please enter the minimum number of digits in the phone number at 9th place')
       end
       it 'phone_numberが12桁以上の場合購入できないこと' do
         @purchase_address.phone_number = '0901234567890'
         @purchase_address.valid?
-        expect(@purchase_address.errors.full_messages).to include("Phone number Please enter up to 12 digits in the phone number")
+        expect(@purchase_address.errors.full_messages).to include('Phone number Please enter up to 12 digits in the phone number')
       end
       it 'userが紐付いていないと保存できないこと' do
         @purchase_address.user_id = nil

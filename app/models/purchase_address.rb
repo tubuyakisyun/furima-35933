@@ -10,7 +10,8 @@ class PurchaseAddress
     validates :phone_number,
               length: { maximum: 12, message: 'Please enter up to 12 digits in the phone number', allow_blank: true }
     validates :phone_number,
-              length: { minimum: 9, message: 'Please enter the minimum number of digits in the phone number at 9th place' , allow_blank: true }
+              length: { minimum: 9, message: 'Please enter the minimum number of digits in the phone number at 9th place',
+                        allow_blank: true }
     validates :phone_number,
               format: { with: /\A0[0-9]+\z/, message: 'number is invalid. Include half-width numbers', allow_blank: true }
     validates :user_id
