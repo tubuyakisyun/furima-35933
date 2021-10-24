@@ -28,5 +28,4 @@ class Item < ApplicationRecord
     validates :scheduled_id
     validates :shipping_id
   end
-
 end
