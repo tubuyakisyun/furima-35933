@@ -19,6 +19,6 @@ class User < ApplicationRecord
       validates :first_name_kana
     end
   end
-  has_many :items, foreign_key: :user_id, dependent: :destroy
-  # has_many :purchases,      foreign_key: :user_id, dependent: :destroy
+  has_many :items,     foreign_key: :user_id, dependent: :destroy
+  has_many :purchases, foreign_key: :user_id, dependent: :destroy
 end

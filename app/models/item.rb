@@ -1,6 +1,7 @@
 class Item < ApplicationRecord
   belongs_to :user
   has_one_attached :image
+  has_one :purchase, foreign_key: :item_id, dependent: :destroy
 
   with_options presence: true do
     validates :name
