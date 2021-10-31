@@ -2,6 +2,7 @@ class PurchasesController < ApplicationController
   before_action :authenticate_user!, only: :index
   before_action :set_purchase, only: [:index, :create]
   before_action :set_purchase_address, only: :index
+  before_action :set_q, only: [:index, :search]
 
   def index
     if current_user == @item.user
@@ -20,6 +21,10 @@ class PurchasesController < ApplicationController
     else
       render :index
     end
+  end
+
+  def search
+    @results = @q.result
   end
 
   private
@@ -47,4 +52,9 @@ class PurchasesController < ApplicationController
   def set_purchase_address
     @purchase_address = PurchaseAddress.new
   end
+
+  def set_q
+    @q = purchase.ransack(params[:q])
+  end
+
 end
